@@ -30,7 +30,8 @@ const Auth = () => {
                                     onChange={(ev: any) => setName(ev.target.value)}
                                     id="name"
                                     value={name}
-                                />)}
+                                />
+                            )}
                             <Input
                                 label="Email"
                                 onChange={(ev: any) => setEmail(ev.target.value)}
@@ -47,12 +48,12 @@ const Auth = () => {
                             />
                         </div>
                         <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
-                            Entrar
+                            {variant === 'login' ? 'Entrar' : 'Cadastrar-se'}
                         </button>
                         <p className="text-neutral-500 mt-12">
-                            Novo por aqui?
+                            {variant === 'login' ? 'Novo por aqui?' : 'Já tem uma conta?'}
                             <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">
-                                Assine agora.
+                                {variant === 'login' ? 'Assine agora.' : 'Entrar'}
                             </span>
                         </p>
                     </div>
