@@ -30,11 +30,11 @@ export default NextAuth({
                     }
                 });
 
-                if (!user || !user.hashedPassaword) {
+                if (!user || !user.hashedPassword) {
                     throw new Error('Email não existe');
                 }
 
-                const isCorrectPassword = await compare(credentials.password, user.hashedPassaword);
+                const isCorrectPassword = await compare(credentials.password, user.hashedPassword);
 
                 if (!isCorrectPassword) {
                     throw new Error('Senha incorreta');
